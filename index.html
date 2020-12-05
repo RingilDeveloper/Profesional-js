@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>PlatziMediaPlayer.js</title>
+    <title>PlatziMediaPlayer</title>
     <link
       rel="stylesheet"
       href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
@@ -34,25 +34,6 @@
       const player = new MediaPlayer({ el: video});
       button.onclick = () => player.play();
     </script> -->
-    <script>
-      const video = document.querySelector("video");
-      const button = document.querySelector("button");
-      class MediaPlayer {
-        constructor(casa){
-          this.video = casa;
-        }
-        play() {
-          if(this.video.paused){
-            this.video.play();
-          }
-          else{
-            this.video.pause();
-          }
-        }
-        }
-      const inicio = new MediaPlayer(video);
-
-      button.onclick = () => inicio.play();
-    </script>
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>
