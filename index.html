@@ -13,13 +13,46 @@
       <h1>PlatziMediaPlayer.js</h1>
       <p>An extensible media player.</p>
     </header>
-
     <main class="container">
       <video class="movie">
         <source src="./assets/prueba.mp4" />
       </video>
-
       <button>Play/Pause</button>
     </main>
+
+    <!-- <script>
+      const video = document.querySelector("video");
+      const button = document.querySelector("button");
+      
+      function MediaPlayer (config){
+        this.media = config.el
+      };
+      MediaPlayer.prototype.play = function(){
+        video.play();
+      };
+      console.log({ el: video})
+      const player = new MediaPlayer({ el: video});
+      button.onclick = () => player.play();
+    </script> -->
+    <script>
+      const video = document.querySelector("video");
+      const button = document.querySelector("button");
+      class MediaPlayer {
+        constructor(casa){
+          this.video = casa;
+        }
+        play() {
+          if(this.video.paused){
+            this.video.play();
+          }
+          else{
+            this.video.pause();
+          }
+        }
+        }
+      const inicio = new MediaPlayer(video);
+
+      button.onclick = () => inicio.play();
+    </script>
   </body>
 </html>
