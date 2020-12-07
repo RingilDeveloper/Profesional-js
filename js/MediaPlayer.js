@@ -1,7 +1,15 @@
 
 class MediaPlayer {
   constructor(video){
-    this.video = video;
+    this.video = video.mi;
+    this.plugins = video.plugins || [];
+
+    this._initPlugings();
+  }
+  _initPlugings(){
+    this.plugins.forEach(plugin => {
+      plugin.run(this);
+    });
   }
   play () {
     if(this.video.paused){
@@ -10,6 +18,12 @@ class MediaPlayer {
     else{
       this.video.pause();
     }
+  }
+  mute(){
+    this.video.muted =  true;
+  }
+  unmute(){
+    this.video.muted = false;
   }
 }
 
