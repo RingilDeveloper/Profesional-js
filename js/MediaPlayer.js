@@ -3,7 +3,7 @@ class MediaPlayer {
   constructor(video){
     this.video = video.mi;
     this.plugins = video.plugins || [];
-
+    
     this._initPlugings();
   }
   _initPlugings(){
