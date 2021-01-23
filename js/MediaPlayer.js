@@ -25,6 +25,13 @@ class MediaPlayer {
   unmute(){
     this.video.muted = false;
   }
+  muteUnmute(){
+    if( this.video.muted ){
+      this.unmute()
+    }else{
+      this.mute()
+    }
+  }
 }
 
 export default MediaPlayer;
