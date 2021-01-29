@@ -9,7 +9,7 @@ class MediaPlayer {
   _initPlugings(){
     const player = {
       play: () =>this.play(),
-      pause: () =>this.pause(),
+      pause: () => this.pause(),
       video: this.video,
       get muted(){
         return this.video.muted
@@ -23,12 +23,10 @@ class MediaPlayer {
     });
   }
   play () {
-    if(this.video.paused){
       this.video.play();
-    }
-    else{
-      this.video.pause();
-    }
+  }
+  pause(){
+    this.video.pause();
   }
   mute(){
     this.video.muted =  true;
