@@ -1,4 +1,8 @@
+import MediaPlayer from './MediaPlayer'
 class AutoPause{
+  private threshold:number;
+  private player:MediaPlayer;
+
   constructor(){
     this.threshold =0.25
     this.handlerIntersection = this.handlerIntersection.bind(this)
@@ -14,7 +18,7 @@ class AutoPause{
   observer.observe(player.video)
   document.addEventListener("visibilitychange",this.handleVisibilitychange) // cuando cambie de tab se pare el video
 }
-  handlerIntersection(entries){
+  private handlerIntersection(entries: IntersectionObserverEntry[]){
     const entry = entries[0]
     const isVisible = entry.intersectionRatio >= this.threshold
     if(isVisible){
@@ -23,7 +27,7 @@ class AutoPause{
     this.player.pause()
     }
   }
-  handleVisibilitychange(){ 
+  private handleVisibilitychange(){ 
     const isVisible = document.visibilityState ==="visible"
     if (isVisible){
       this.player.play()

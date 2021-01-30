@@ -16,14 +16,15 @@ self.addEventListener('fetch', event => {
 const precache = async ()=>{
   const cache = await caches.open('v1')
   return cache.addAll([  
-  '/',
+/*   '/',
   '/index.html',
   '/js/index.js',
   '/js/MediaPlayer.js',
   '/js/AutoPlay.js',
   '/js/AutoPause.js',
   '/styles/index.css',
-  '/assets/prueba.mp4',])
+  '/assets/prueba.mp4', */
+  ])
 }
 const cacheResponse = async request =>{
   const cache = await caches.open("v1")
